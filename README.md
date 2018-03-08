@@ -9,6 +9,7 @@
  2. feign对服务双方的糅合《客户端负载均衡，服务端服务熔断以及降级》
  3. API网关
  4. 分布式配置中心 spring cloud config
+ 5. 分布式服务追踪 sleuth + zipkin
  
  
  技术点：
