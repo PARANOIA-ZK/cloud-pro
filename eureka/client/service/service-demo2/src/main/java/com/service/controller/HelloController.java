@@ -34,22 +34,18 @@ public class HelloController {
         return String.valueOf(money);
     }
 
-    @RequestMapping(value = "/minus", method = RequestMethod.GET)
-    String minus(@RequestParam("xid") String id, @RequestParam("money") String money) {
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    String add(@RequestParam("xid") String id,@RequestParam("money") String money) {
 
         System.out.println("id = " + id);
         System.out.println("money = " + money);
 
-        int minusMoney = Integer.parseInt(money);
+        int addMoney = Integer.parseInt(money);
         TxcContext.bind(id, null);
         int totalMoney = countService.getOne(1).getMoney();
-        if (totalMoney < minusMoney) {
-            System.out.println(totalMoney + " < " + minusMoney);
-            return "-1";
-        }
         Account account = new Account();
         account.setId(1);
-        account.setMoney(totalMoney - minusMoney);
+        account.setMoney(totalMoney + addMoney);
         countService.update(account);
         TxcContext.unbind();
         return "1";

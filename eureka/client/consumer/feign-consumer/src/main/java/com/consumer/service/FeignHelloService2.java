@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date 2018/3/6 18:50
  */
 //绑定服务
-@FeignClient(value = "service-demo", fallback = FeignHelloServiceFallback.class)
-public interface FeignHelloService {
+@FeignClient(value = "service-demo2", fallback = FeignHelloServiceFallback2.class)
+public interface FeignHelloService2 {
 
     @RequestMapping(value = "/hi", method = RequestMethod.GET)
     String hi(@RequestParam("name") String name);
@@ -19,6 +19,6 @@ public interface FeignHelloService {
     @RequestMapping(value = "/getOne", method = RequestMethod.GET)
     String getOne(@RequestParam("id") String id);
 
-    @RequestMapping(value = "/minus", method = RequestMethod.GET)
-    String minus(@RequestParam("xid") String id,@RequestParam("money") String money) ;
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    String add(@RequestParam("xid") String id,@RequestParam("money") String money);
 }

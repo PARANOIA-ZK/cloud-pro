@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @date 2018/3/6 20:00
  */
 @Component
-public class FeignHelloServiceFallback implements FeignHelloService {
+public class FeignHelloServiceFallback2 implements FeignHelloService2 {
 
     @Override
     public String hi(String name) {
@@ -21,7 +21,7 @@ public class FeignHelloServiceFallback implements FeignHelloService {
     }
 
     @Override
-    public String minus(@RequestParam("xid") String id, @RequestParam("money") String money) {
+    public String add(@RequestParam("xid") String id, @RequestParam("money") String money) {
         return null;
     }
 }
